@@ -1,3 +1,4 @@
+import { Map } from 'immutable';
 import * as React from 'react';
 import { Route, RouterProps } from 'react-router';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -6,7 +7,7 @@ import { ShellState, useAppModel } from '../../models/useAppModel';
 
 export interface AppContainerProps<S extends ShellState>
     extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    initialState: S;
+    initialState: Map<keyof S, ValueType | null>;
 }
 
 export const AppContainer = <S extends ShellState>({ children, initialState, ...props }: AppContainerProps<S>) => {
