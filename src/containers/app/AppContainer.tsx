@@ -15,7 +15,7 @@ export const AppContainer = <S extends ShellState>({ children, initialState, ...
     const model = useAppModel<S>(initialState);
 
     return (
-        <div className="AppContainer" {...props}>
+        <main className="AppContainer" {...props}>
             <AppContext.Provider value={model.state}>
                 <Router>
                     <Route>
@@ -27,6 +27,6 @@ export const AppContainer = <S extends ShellState>({ children, initialState, ...
                     </Route>
                 </Router>
             </AppContext.Provider>
-        </div>
+        </main>
     );
 };
