@@ -1,6 +1,6 @@
 {
   "name": "um-react-shell",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "User Module application shell",
   "main": "build/main/index.js",
   "module": "build/module/index.js",
