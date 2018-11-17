@@ -2,12 +2,9 @@
   "name": "um-react-shell",
   "version": "0.0.1",
   "description": "User Module application shell",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "module": "",
-  "files": [
-    "dist"
-  ],
+  "main": "build/main/index.js",
+  "module": "build/module/index.js",
+  "typings": "build/main/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/umbiliko/um-react-shell.git"
@@ -18,7 +15,6 @@
     "Message",
     "Module",
     "React",
-    "Reducer",
     "User"
   ],
   "author": "Lucas M. Oromi <lucas.oromi@gmail.com>",
@@ -28,19 +24,27 @@
   },
   "homepage": "https://github.com/umbiliko/um-react-shell#readme",
   "dependencies": {
+    "immutable": "^3.8.2",
     "ntt-flow": "^0.0.5",
-    "um-react-core": "0.0.2"
+    "um-react-core": "0.0.13"
   },
   "scripts": {
-    "build": "tsc",
-    "major": "npm version major",
-    "minor": "npm version minor",
-    "patch": "npm version patch",
-    "publish": "npm publish --access public",
-    "test": "react-scripts-ts test --env=jsdom",
+    "build": "npm run build:main && npm run build:module",
+    "build:all": "npm-run-all copy:css-to-lib build:ts",
+    "build:main": "npm run clean:main && tsc -p tsconfig.json",
+    "build:module": "npm run clean:module && tsc -p tsconfig.module.json",
+    "build:storybook": "build-storybook",
+    "build:ts": "tsc",
+    "clean": "rimraf ./build/",
+    "clean:main": "rimraf ./build/main/",
+    "clean:module": "rimraf ./build/module/",
+    "compile": "tsc -p .",
+    "patch": "npm run build && npm run path:git && npm version patch && npm publish",
+    "patch:git": "git add . && git commit -m 'patch'",
     "start": "start-storybook -p 6006",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "node scripts/test.js --env=jsdom",
+    "test:tss": "react-scripts-ts test --env=jsdom"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.11",
@@ -60,6 +64,10 @@
     "react-router": "^4.4.0-beta.5",
     "react-router-dom": "^4.3.1",
     "react-scripts-ts": "^4.0.8",
+    "react-testing-library": "^5.2.3",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.7.0",
     "typescript": "^3.1.2"
   }
 }

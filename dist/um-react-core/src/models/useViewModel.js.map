@@ -1,0 +1,1 @@
+{"version":3,"file":"useViewModel.js","sourceRoot":"","sources":["../../../../../um-react-core/src/models/useViewModel.ts"],"names":[],"mappings":";;;IAIa,QAAA,YAAY,GAAG;QACxB,IAAI,CAAC,kBAAU,EAAE;YACb,MAAM,IAAI,KAAK,CAAC,wBAAwB,CAAC,CAAC;SAC7C;QACD,OAAO,kBAAU,CAAC,sBAAW,CAAC,CAAC;IACnC,CAAC,CAAC"}

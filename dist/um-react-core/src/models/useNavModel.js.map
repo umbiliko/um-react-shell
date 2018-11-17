@@ -1,0 +1,1 @@
+{"version":3,"file":"useNavModel.js","sourceRoot":"","sources":["../../../../../um-react-core/src/models/useNavModel.ts"],"names":[],"mappings":";;;IAIa,QAAA,WAAW,GAAG;QACvB,IAAI,CAAC,kBAAU,EAAE;YACb,MAAM,IAAI,KAAK,CAAC,wBAAwB,CAAC,CAAC;SAC7C;QACD,OAAO,kBAAU,CAAC,qBAAU,CAAC,CAAC;IAClC,CAAC,CAAC"}
